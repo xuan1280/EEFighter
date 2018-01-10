@@ -3,6 +3,7 @@ package model.sprite;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,7 +12,8 @@ import java.util.Stack;
 import model.Question;
 
 public class PlayerSprite extends Sprite{
-	private Stack<Sprite> letters = new Stack<Sprite>();
+	private LinkedList<Character> letter = new LinkedList<Character>();
+	private Stack<Sprite> letters = new Stack<>();
 	private int score = 0;
 	
 	public PlayerSprite(int w, int h, int biasWithX, int biasWithY, int bodyHeight, int bodyLength,
@@ -63,34 +65,6 @@ public class PlayerSprite extends Sprite{
 	}
 
 	public void addLetter(String answer, Sprite sprite) {
-		List<Character> tempAnswer = new ArrayList<>();
-		List<Character> tempAnswerCopy = new ArrayList<>();
-		for (int i = 0; i < answer.length(); i++) {
-			tempAnswer.add(answer.charAt(i));
-			tempAnswerCopy.add(answer.charAt(i));
-		}
-		List<Character> match = new ArrayList<>();
-		List<Character> nonsenses = new ArrayList<>();
-		
-		for (int j = 0; j < letters.size(); j++) {
-			Character letter = letters.get(j).getSpriteName().toString().charAt(0);
-			if (tempAnswer.contains(letter)) {
-				match.add(letter);
-				tempAnswer.remove(letter);
-			}
-			else 
-				nonsenses.add(letter);
-		}
-		
-		Collections.sort(match, (letter1, letter2) -> {
-			return tempAnswerCopy.indexOf(letter1) - tempAnswerCopy.indexOf(letter2);
-		});
-		
-		StringBuilder stringBuilder = new StringBuilder();
-		for (Character character : match)
-			stringBuilder.append(character);
-		for (Character character : nonsenses)
-			stringBuilder.append(character);
 		
 		// TODO ±Æ§Ç
 		letters.push(sprite);
