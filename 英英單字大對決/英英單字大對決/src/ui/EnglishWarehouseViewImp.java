@@ -116,7 +116,6 @@ public class EnglishWarehouseViewImp extends JFrame implements EnglishWarehouseV
 		if (button == addWordBtn) {
 			String text = searchAndAddWordEd.getText();
 			englishWarehouseController.addWord(text);
-			wordDefaultListModel.addElement(new Word(text));
 		} else if (button == removeWordBtn) {
 			Word word = wordList.getSelectedValue();
 			int index = wordList.getSelectedIndex();
@@ -128,6 +127,7 @@ public class EnglishWarehouseViewImp extends JFrame implements EnglishWarehouseV
 	@Override
 	public void onWordCreateSuccessfully(Word word) {
 		JOptionPane.showMessageDialog(null, word.getWord() + " create successfuly"); 
+		wordDefaultListModel.addElement(word);
 	}
 
 	@Override
@@ -163,7 +163,7 @@ public class EnglishWarehouseViewImp extends JFrame implements EnglishWarehouseV
 
 	@Override
 	public void onWordNotExistCreateFailed(String word) {
-		// TODO Auto-generated method stub
+		JOptionPane.showMessageDialog(null, word + " is not exist."); 
 		
 	}
 }
