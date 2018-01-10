@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <EnglishWarehouse>
-<Word name="authority">
-        <SoundPath>sounds\vocabulary\authority.wav</SoundPath>
-        <Definition partOfSpeech="N">the power or right to give orders or make decisions</Definition>
-        <Definition partOfSpeech="N">(usually plural) persons who exercise (administrative) control over others</Definition>
-        <Definition partOfSpeech="N">an administrative unit of government</Definition>
-        <Definition partOfSpeech="N">an expert whose views are taken as definitive</Definition>
-        <Definition partOfSpeech="N">an authoritative written work</Definition>
-        <Definition partOfSpeech="N">freedom from doubt; belief in yourself and your abilities</Definition>
-        <Definition partOfSpeech="N">official permission or approval</Definition>
-    </Word>
+
 <Word name="consumption">
         <SoundPath>sounds\vocabulary\consumption.wav</SoundPath>
         <Definition partOfSpeech="N">the act of consuming something</Definition>
@@ -150,10 +141,7 @@
         <Definition partOfSpeech="V">make publicity for; try to sell (a product)</Definition>
         <Definition partOfSpeech="V">call attention to</Definition>
     </Word>
-<Word name="convince">
-        <SoundPath>sounds\vocabulary\convince.wav</SoundPath>
-        <Definition partOfSpeech="V">make (someone) agree, understand, or realize the truth or validity of something</Definition>
-    </Word>
+
 <Word name="hype">
         <SoundPath>sounds\vocabulary\hype.wav</SoundPath>
         <Definition partOfSpeech="N">blatant or sensational promotion</Definition>
@@ -184,5 +172,14 @@
         <Definition partOfSpeech="V">supply with water, as with channels or ditches or streams</Definition>
         <Definition partOfSpeech="V">secrete or form water, as tears or saliva</Definition>
         <Definition partOfSpeech="V">fill with tears</Definition>
+    </Word>
+<Word name="apple">
+        <SoundPath>sounds\vocabulary\apple.wav</SoundPath>
+        <Definition partOfSpeech="N">native Eurasian tree widely cultivated in many varieties for its firm rounded edible fruits</Definition>
+        <Definition partOfSpeech="N">fruit with red or yellow or green skin and sweet to tart crisp whitish flesh</Definition>
+    </Word>
+<Word name="convince">
+        <SoundPath>sounds\vocabulary\convince.wav</SoundPath>
+        <Definition partOfSpeech="V">make (someone) agree, understand, or realize the truth or validity of something</Definition>
     </Word>
 </EnglishWarehouse>

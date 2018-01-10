@@ -14,11 +14,12 @@ public abstract class WordProductionLineFactory {
 		tts = componentAbstractFactory.getTts();
 	}
 	
-	public void addWordToWordRepository(String wordTxt) throws WordNotExistException, TTSException {
-		Word word = new Word(wordTxt);
+	public Word addWordToWordRepository(String wordtxt) throws WordNotExistException, TTSException {
+		Word word = new Word(wordtxt);
 		word = onPreparingWord(word);
 		word = onGetWordSound(word);
 		onSavingWord(word);
+		return word;
 	}
 	
 	public abstract Word onPreparingWord(Word word) throws WordNotExistException;
