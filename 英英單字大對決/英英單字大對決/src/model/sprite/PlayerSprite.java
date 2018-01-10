@@ -4,10 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import java.util.Stack;
-
-import utils.SortHelper;
-
 public class PlayerSprite extends Sprite{
 	private List<Character> letters = new LinkedList<>();
 	private int score = 0;
@@ -78,13 +74,6 @@ public class PlayerSprite extends Sprite{
 		while (!letters.isEmpty())
 			letters.addAll(letters);
 	}
-
-//	public List<Sprite> getLetters() {
-//		for (Sprite sprite : letters) {
-//			System.out.println(sprite.spriteName.toString());
-//		}
-//		return letters;
-//	}
 	
 	public List<Character> getLetters() {
 		return letters;

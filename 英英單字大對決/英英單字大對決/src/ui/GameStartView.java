@@ -171,16 +171,17 @@ public class GameStartView extends JFrame implements IGameStartView {
 		add(c, gbc);
 	}
 
-	public void showPlayerBarInfo(String player, int score, List<Sprite> letter) {
+	public void showPlayerBarInfo(String player, int score, List<Character> letter) {
 		if (player.equals("player1")) {
+			
 			StringBuilder strBuilder = new StringBuilder("[" + score + "] Player1: ");
 			for (int i = 0; i < letter.size(); i++)
-				strBuilder.append(letter.get(i).getSpriteName() + " ");
+				strBuilder.append(letter.get(i) + " ");
 			player1Lab.setText("<html>" + strBuilder.toString() + " </html>");
 		} else if (player.equals("player2")) {
 			StringBuilder strBuilder = new StringBuilder("[" + score + "] Player2: ");
 			for (int i = 0; i < letter.size(); i++)
-				strBuilder.append(letter.get(i).getSpriteName() + " ");
+				strBuilder.append(letter.get(i) + " ");
 			player2Lab.setText("<html>" + strBuilder.toString() + " </html>");
 		}
 	}
@@ -200,12 +201,12 @@ public class GameStartView extends JFrame implements IGameStartView {
 	}
 
 	@Override
-	public void onPlayerEatLetter(String player, int score, List<Sprite> letter) {
+	public void onPlayerEatLetter(String player, int score, List<Character> letter) {
 		showPlayerBarInfo(player, score, letter);
 	}
 
 	@Override
-	public void onPlayerPopedLetter(String player, int score, List<Sprite> letter) {
+	public void onPlayerPopedLetter(String player, int score, List<Character> letter) {
 		showPlayerBarInfo(player, score, letter);
 	}
 

@@ -163,7 +163,7 @@ public class EnglishWarehouseViewImp extends JFrame implements EnglishWarehouseV
 
 	@Override
 	public void onWordNotExistCreateFailed(String word) {
-		JOptionPane.showMessageDialog(null, word + " is not exist."); 
+		JOptionPane.showMessageDialog(null, word + " is not a word."); 
 		
 	}
 }
