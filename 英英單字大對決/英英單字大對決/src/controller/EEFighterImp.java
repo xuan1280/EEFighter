@@ -23,6 +23,7 @@ import model.sprite.Sprite.Status;
 import model.sprite.SpriteName;
 import model.sprite.SpritePrototypeFactory;
 import ui.GameView;
+import utils.SortHelper;
 
 
 /**
@@ -141,9 +142,12 @@ public class EEFighterImp implements EEFighter, LetterCreateListener, QuestionLi
 
 	@Override
 	public void popLetter(PlayerSprite player) {
-		Sprite letter = player.popLetter();
-		if (letter != null) 
+		List<Character> letterCharacters = SortHelper.sortPlayerLetters(questionManager.getNowQuestion().toString(), player.getLetters());
+		Character letter = letterCharacters.get(letterCharacters.size());
+		if (letter != null) {
+			player.popLetter(letter);
 			gameView.onLetterPoppedSuccessfuly(player, player.getLetters());
+		}
 		else 
 			gameView.onLetterPoppedFailed(player);
 	}
@@ -152,7 +156,7 @@ public class EEFighterImp implements EEFighter, LetterCreateListener, QuestionLi
 	public boolean isLetterCollided(PlayerSprite player) {
 		for (Sprite letter : letters)
 			if (letter.isCollisions(player)) {
-				player.addLetter(questionManager.getNowQuestion().getWord().toUpperCase(), letter);
+				player.addLetter(letter.getSpriteName().toString().charAt(0));
 				letters.remove(letter);
 				letterPlacingManager.releaseLetter(letter);
 				return true;
@@ -162,8 +166,10 @@ public class EEFighterImp implements EEFighter, LetterCreateListener, QuestionLi
 	
 	@Override
 	public void pickUp(PlayerSprite player) {
-		if (isLetterCollided(player)) 
-			gameView.onLetterGotten(player, player.getLetters());
+		if (isLetterCollided(player)) {
+			List<Character> letterCharacters = SortHelper.sortPlayerLetters(questionManager.getNowQuestion().toString(), player.getLetters());
+			gameView.onLetterGotten(player, letterCharacters);
+		}
 		else 
 			gameView.onNoLetterGotten(player, player.getLetters());	
 	}
@@ -172,7 +178,7 @@ public class EEFighterImp implements EEFighter, LetterCreateListener, QuestionLi
 	public void checkAnswer(PlayerSprite player) {
 		String words = questionManager.getNowQuestion().getWord().toUpperCase();
 		System.out.println(words);
-		List<Sprite> letters = player.getLetters();
+		List<Character> letters = player.getLetters();
 		if (words.length() == letters.size() && compareLetters(words, letters)) {
 			player.setScore(player.getScore() + 1);
 			gameView.onAnswerCorrect(player);
@@ -181,11 +187,11 @@ public class EEFighterImp implements EEFighter, LetterCreateListener, QuestionLi
 			gameView.onAnswerWrong(player);
 	}
 	
-	private boolean compareLetters(String words, List<Sprite> playerLetters) {
+	private boolean compareLetters(String words, List<Character> playerLetters) {
 		boolean[] check = new boolean[words.length()];
-		for (Sprite letter : playerLetters) 
+		for (Character letter : playerLetters) 
 			for (int i = 0; i < check.length; i++) 
-				if (!check[i] && letter.getSpriteName().toString().charAt(0) == words.charAt(i)) {
+				if (!check[i] && letter == words.charAt(i)) {
 					System.out.println("correct:" + words.charAt(i));
 					check[i] = true;
 					break;

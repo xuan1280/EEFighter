@@ -28,13 +28,13 @@ public interface GameView {
 
 	void onNoMoreQuestion();
 
-	void onLetterPoppedSuccessfuly(PlayerSprite player, List<Sprite> letter);
+	void onLetterPoppedSuccessfuly(PlayerSprite player, List<Character> letters);
 
 	void onLetterPoppedFailed(PlayerSprite player);
 
-	void onLetterGotten(PlayerSprite player, List<Sprite> letter);
+	void onLetterGotten(PlayerSprite player, List<Character> letters);
 
-	void onNoLetterGotten(PlayerSprite player, List<Sprite> letter);
+	void onNoLetterGotten(PlayerSprite player, List<Character> letters);
 
 	void onAnswerCorrect(PlayerSprite player);
 

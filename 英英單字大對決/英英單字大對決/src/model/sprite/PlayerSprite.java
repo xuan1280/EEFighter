@@ -9,7 +9,7 @@ import java.util.Stack;
 import utils.SortHelper;
 
 public class PlayerSprite extends Sprite{
-	private List<Character> letters = new LinkedList<Character>();
+	private List<Character> letters = new LinkedList<>();
 	private int score = 0;
 
 	public PlayerSprite(int w, int h, int biasWithX, int biasWithY, int bodyHeight, int bodyLength,
@@ -60,27 +60,23 @@ public class PlayerSprite extends Sprite{
 		return false;
 	}
 
-	public void addLetter(String answer, Sprite sprite) {
-		letters.add(sprite.getSpriteName().toString().charAt(0));
-		letters = SortHelper.sortPlayerLetters(answer, getLetters());
-		// TODO ±Æ§Ç
-
-		// letters.push(sprite);
+	public void addLetter(Character letter) {
+		letters.add(letter);
 	}
 
-	private boolean indexIsAlreadyChange(String gottenLetter, String questionLetter) {
-		return gottenLetter.equals(questionLetter) ? true : false;
-	}
-
-	public Character popLetter() {
-		if (!letters.isEmpty())
-			return letters.pop();
-		return null;
+	public Character popLetter(Character letter) {
+		Character l = null;
+		for (int i = letters.size(); i >= 0; i++) 
+			if (letters.get(i) == letter) {
+				letters.remove(i);
+				break;
+			}
+		return l;
 	}
 
 	public void removeAllLetters() {
 		while (!letters.isEmpty())
-			popLetter();
+			letters.addAll(letters);
 	}
 
 //	public List<Sprite> getLetters() {
@@ -93,5 +89,5 @@ public class PlayerSprite extends Sprite{
 	public List<Character> getLetters() {
 		return letters;
 	}
-
+	
 }

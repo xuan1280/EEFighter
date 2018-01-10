@@ -7,6 +7,7 @@ import java.util.List;
 public class SortHelper {
 
 	public static List<Character> sortPlayerLetters(String answer, List<Character> letters){
+		answer = answer.toUpperCase();
 		List<Character> tempAnswer = new ArrayList<>();
 		List<Character> tempAnswerCopy = new ArrayList<>();
 		for (int i = 0; i < answer.length(); i++) {
