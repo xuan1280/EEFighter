@@ -2,14 +2,11 @@ package utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class SortHelper {
 
-	public static List<Character> sortPlayerLetters(String answer){
-		List<Character> letters = new LinkedList<>();
-		
+	public static List<Character> sortPlayerLetters(String answer, List<Character> letters){
 		List<Character> tempAnswer = new ArrayList<>();
 		List<Character> tempAnswerCopy = new ArrayList<>();
 		for (int i = 0; i < answer.length(); i++) {

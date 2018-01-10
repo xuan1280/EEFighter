@@ -1,19 +1,15 @@
 package model.sprite;
 
-import java.awt.Image;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 import java.util.Stack;
 
-import model.Question;
+import utils.SortHelper;
 
 public class PlayerSprite extends Sprite{
-	private LinkedList<Character> letter = new LinkedList<Character>();
-	private Stack<Sprite> letters = new Stack<>();
+	private List<Character> letters = new LinkedList<Character>();
 	private int score = 0;
 
 	public PlayerSprite(int w, int h, int biasWithX, int biasWithY, int bodyHeight, int bodyLength,
@@ -65,7 +61,8 @@ public class PlayerSprite extends Sprite{
 	}
 
 	public void addLetter(String answer, Sprite sprite) {
-		
+		letters.add(sprite.getSpriteName().toString().charAt(0));
+		letters = SortHelper.sortPlayerLetters(answer, getLetters());
 		// TODO ±Æ§Ç
 
 		// letters.push(sprite);
@@ -75,7 +72,7 @@ public class PlayerSprite extends Sprite{
 		return gottenLetter.equals(questionLetter) ? true : false;
 	}
 
-	public Sprite popLetter() {
+	public Character popLetter() {
 		if (!letters.isEmpty())
 			return letters.pop();
 		return null;
@@ -86,10 +83,14 @@ public class PlayerSprite extends Sprite{
 			popLetter();
 	}
 
-	public List<Sprite> getLetters() {
-		for (Sprite sprite : letters) {
-			System.out.println(sprite.spriteName.toString());
-		}
+//	public List<Sprite> getLetters() {
+//		for (Sprite sprite : letters) {
+//			System.out.println(sprite.spriteName.toString());
+//		}
+//		return letters;
+//	}
+	
+	public List<Character> getLetters() {
 		return letters;
 	}
 
