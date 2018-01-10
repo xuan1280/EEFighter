@@ -43,7 +43,7 @@ public class GameStartView extends JFrame implements IGameStartView {
 		super("英英單字大對決");
 		eeFighterImp = new EEFighterImp(componentAbstractFactory);
 		EventQueue.invokeLater(() -> {
-			setBounds(215, 80, MAPWIDTH *64 + 5, MAPHEIGHT * 64 + 15);
+			setBounds(215, 80, MAPWIDTH *64 + 500, MAPHEIGHT * 64 + 15);
 			setupViews();
 			setupLayout();
 			addWindowListener(new CloseHandler());

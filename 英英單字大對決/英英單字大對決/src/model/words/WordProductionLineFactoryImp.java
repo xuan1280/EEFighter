@@ -6,32 +6,18 @@ public class WordProductionLineFactoryImp extends WordProductionLineFactory {
 
 	public WordProductionLineFactoryImp(ComponentAbstractFactory componentAbstractFactory) {
 		super(componentAbstractFactory);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public void addWordToWordRepository(String wordTxt) {
-		Word word = new Word(wordTxt);
-		onPreparingWord(word);
-		onGetWordSound(word);
-		onSavingWord(word);
 	}
 	
 	@Override
-	public void onPreparingWord(Word word) {
-		// TODO Auto-generated method stub
-		
+	public Word onPreparingWord(Word word) throws WordNotExistException {
+		return crawler.crawlWordAndGetSentence(word.getWord());
 	}
 
 	@Override
-	public void onGetWordSound(Word word) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onSavingWord(Word word) {
-		// TODO Auto-generated method stub
-		
+	public Word onGetWordSound(Word word) throws TTSException {
+		String soundPath = tts.saveWordTTS(path, word.getWord());
+		word.setSoundPath(soundPath);
+		return word;
 	}
 
 }
