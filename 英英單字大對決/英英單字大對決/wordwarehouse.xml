@@ -358,4 +358,16 @@
         <SoundPath>sounds\vocabulary\customer.wav</SoundPath>
         <Definition partOfSpeech="n">someone who pays for goods or services</Definition>
     </Word>
+<Word name="pig">
+        <SoundPath>sounds\vocabulary\pig.wav</SoundPath>
+        <Definition partOfSpeech="N">domestic swine</Definition>
+        <Definition partOfSpeech="N">a person regarded as greedy and pig-like</Definition>
+        <Definition partOfSpeech="N">a coarse obnoxious person</Definition>
+        <Definition partOfSpeech="N">a crude block of metal (lead or iron) poured from a smelting furnace</Definition>
+        <Definition partOfSpeech="N">mold consisting of a bed of sand in which pig iron is cast</Definition>
+        <Definition partOfSpeech="N">uncomplimentary terms for a policeman</Definition>
+        <Definition partOfSpeech="V">give birth</Definition>
+        <Definition partOfSpeech="V">live like a pig, in squalor</Definition>
+        <Definition partOfSpeech="V">eat greedily</Definition>
+    </Word>
 </EnglishWarehouse>

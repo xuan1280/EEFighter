@@ -62,17 +62,7 @@
         <Definition partOfSpeech="ADJ">consisting of or related to language</Definition>
         <Definition partOfSpeech="ADJ">of or relating to the scientific study of language</Definition>
     </Word>
-<Word name="offensive">
-        <SoundPath>sounds\vocabulary\offensive.wav</SoundPath>
-        <Definition partOfSpeech="N">the action of attacking an enemy</Definition>
-        <Definition partOfSpeech="ADJ">unpleasant or disgusting especially to the senses</Definition>
-        <Definition partOfSpeech="ADJ">causing or able to cause nausea</Definition>
-        <Definition partOfSpeech="ADJ">causing anger or annoyance</Definition>
-        <Definition partOfSpeech="ADJ">substitute a harsher or distasteful term for a mild one</Definition>
-        <Definition partOfSpeech="ADJ">violating or tending to violate or offend against</Definition>
-        <Definition partOfSpeech="ADJ">morally offensive</Definition>
-        <Definition partOfSpeech="ADJ">for the purpose of attack rather than defense</Definition>
-    </Word>
+
 <Word name="rational">
         <SoundPath>sounds\vocabulary\rational.wav</SoundPath>
         <Definition partOfSpeech="N">an integer or a fraction</Definition>
@@ -173,12 +163,8 @@
         <Definition partOfSpeech="V">secrete or form water, as tears or saliva</Definition>
         <Definition partOfSpeech="V">fill with tears</Definition>
     </Word>
-
 <Word name="convince">
         <SoundPath>sounds\vocabulary\convince.wav</SoundPath>
         <Definition partOfSpeech="V">make (someone) agree, understand, or realize the truth or validity of something</Definition>
     </Word>
-
-
-
 </EnglishWarehouse>
